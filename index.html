@@ -112,16 +112,11 @@
       }
     });
 
-    // Function to detect iPhone
-    function isiPhone() {
-      return /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    }
-
-    // Automatically open chat on iPhone
-    if (isiPhone()) {
+    // Automatically open chat when the page loads
+    window.onload = () => {
       chatPanel.style.display = 'block';
-      openChatButton.style.display = 'none';
-    }
+      openChatButton.innerText = 'Close Chat';
+    };
   </script>
 </body>
 </html>
